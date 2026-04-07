@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
         app_config.vm.box = "#{os}"
         app_config.vm.network "private_network", ip: "#{host_net}.10"
         app_config.vm.provision "shell", inline: <<-SHELL
-            echo "root:fiipractic" | chpasswd
+            echo "root:#{ENV['VAGRANT_ROOT_PASS'] || 'changeme'}" | chpasswd
             echo "PasswordAuthentication yes" > /etc/ssh/sshd_config.d/99-vagrant.conf
             echo "PermitRootLogin yes" >> /etc/ssh/sshd_config.d/99-vagrant.conf
             systemctl restart sshd
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
         gitlab_config.vm.disk :disk, size: "20GB", primary: true
         gitlab_config.vm.network "private_network", ip: "#{host_net}.20"
         gitlab_config.vm.provision "shell", inline: <<-SHELL
-            echo "root:fiipractic" | chpasswd
+            echo "root:#{ENV['VAGRANT_ROOT_PASS'] || 'changeme'}" | chpasswd
             echo "PasswordAuthentication yes" > /etc/ssh/sshd_config.d/99-vagrant.conf
             echo "PermitRootLogin yes" >> /etc/ssh/sshd_config.d/99-vagrant.conf
             systemctl restart sshd
