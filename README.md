@@ -18,6 +18,7 @@ Two Rocky Linux 9 VMs managed with Vagrant:
 | 01 | Virtualization & Provisioning | [Session-01-Virtualization.md](Session-01-Virtualization.md) |
 | 02 | Linux, Bash & Networking | [Session-02-Linux.md](Session-02-Linux.md) |
 | 03 | Web Server, HTTPS & Reverse Proxy | [Session-03-WebServer.md](Session-03-WebServer.md) |
+| 04 | Containerization & Configuration Management | [Session-04-Containerization.md](Session-04-Containerization.md) |
 
 ## Tools Used
 
@@ -29,3 +30,6 @@ Two Rocky Linux 9 VMs managed with Vagrant:
 - **Netdata** — real-time monitoring
 - **Wireshark** — network traffic analysis
 - **OpenSSL** — encryption / decryption
+- **Ansible** — configuration management
+- **Docker** — containerization
+- **Docker Compose** — multi-container orchestration
